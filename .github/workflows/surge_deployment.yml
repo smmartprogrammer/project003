@@ -10,9 +10,6 @@ on:
   pull_request:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -41,7 +38,7 @@ jobs:
         run: npm install --global
 
       - name: Deploy to Surge
-        run: surge ./build project003.surge.su $ {{secrets.SURGE_TOKEN}}
+        run: surge ./build project003-partab.surge.sh ${{secrets.SURGE_TOKEN}}
 
 
 
